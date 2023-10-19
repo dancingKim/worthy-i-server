@@ -20,8 +20,8 @@ import java.io.IOException;
 @Slf4j
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
-    private com.jh.hackathon.security.TokenProvider tokenProvider;
-    public JwtAuthenticationFilter(com.jh.hackathon.security.TokenProvider tokenProvider){
+    private TokenProvider tokenProvider;
+    public JwtAuthenticationFilter(TokenProvider tokenProvider){
         this.tokenProvider = tokenProvider;
     }
 

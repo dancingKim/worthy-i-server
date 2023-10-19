@@ -13,7 +13,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Optional;
 
-import static com.jh.hackathon.security.RedirectUrlCookieFilter.REDIRECT_URI_PARAM;
+import static com.back.worthyi.security.RedirectUrlCookieFilter.REDIRECT_URI_PARAM;
+
 
 @Slf4j
 @Component
@@ -24,7 +25,7 @@ public class OAuthSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
         log.info("auth succeeded");
-        com.jh.hackathon.security.TokenProvider tokenProvider = new com.jh.hackathon.security.TokenProvider();
+        TokenProvider tokenProvider = new TokenProvider();
         String token = tokenProvider.create(authentication);
 
         Optional<Cookie> oCookie = Arrays.stream(request.getCookies()).filter(cookie -> cookie.getName().equals(REDIRECT_URI_PARAM)).findFirst();

@@ -8,14 +8,14 @@
         ;
     </insert>
 
-    <select id="findByEid" parameterType="String">
+    <select id="findByEid" parameterType="String" resultType="UserDto">
         SELECT *
         FROM USER
         WHERE EID = #{eid}
         ;
     </select>
 
-    <select id="existsById" parameterType="String" resultType="booleant">
+    <select id="existsById" parameterType="String" resultType="boolean">
         SELECT EXISTS(SELECT 1 FROM user WHERE eid = #{eid}) AS user_exists;
     </select>
 </mapper>
