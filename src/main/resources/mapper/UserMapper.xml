@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.back.worthyi.dao.UserDao">
+    <insert id="save" parameterType="UserDto">
+        INSERT INTO USER(USER_ID, EID, PWD, ACCESS_TOKEN, PROVIDER_NM)
+        VALUES (#{userId},#{eid}, #{pwd}, #{accessToken}, #{providerNm})
+        ;
+    </insert>
+
+    <select id="findByEid" parameterType="String" resultType="UserDto">
+        SELECT *
+        FROM USER
+        WHERE EID = #{eid}
+        ;
+    </select>
+
+    <select id="existsById" parameterType="String" resultType="boolean">
+        SELECT EXISTS(SELECT 1 FROM user WHERE eid = #{eid}) AS user_exists;
+    </select>
+</mapper>
