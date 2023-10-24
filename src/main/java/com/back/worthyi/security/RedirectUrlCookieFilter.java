@@ -29,6 +29,7 @@ public class RedirectUrlCookieFilter extends OncePerRequestFilter {
             try {
                 log.info("request url {} ", request.getRequestURL());
                 String redirectUrl = request.getParameter(REDIRECT_URI_PARAM);
+                log.info("redirectUrl = {}",redirectUrl);
 
                 Cookie cookie = new Cookie(REDIRECT_URI_PARAM, redirectUrl);
                 cookie.setPath("/");

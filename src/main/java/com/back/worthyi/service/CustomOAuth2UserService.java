@@ -12,6 +12,8 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.util.UUID;
+
 
 @Slf4j
 @Service
@@ -55,9 +57,11 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         UserDto userDto = null;
 
 
-        if(! userDao.existsByEid(email)){
-            userDto = userDto.builder().eid(email).providerNm(authProvider).build();
-            userDto = userDao.save(userDto);
+        if(!userDao.existsByEid(email)){
+            String uuid = UUID.randomUUID().toString().replace("-", "");
+            userDto = userDto.builder().userId(uuid).eid(email).providerNm(authProvider).build();
+            userDao.save(userDto);
+            userDto = userDao.findByEid(email);
         } else {
             userDto = userDao.findByEid(email);
         }
