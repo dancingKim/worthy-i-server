@@ -9,11 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserDto {
+public class AvatarDto {
+    private Long avatarId;
+    private String avatarNm;
+    private String avatarImg;
     private String userId;
-    private String eid;
-    private String pwd;
-    private String accessToken;
-    private String providerNm;
-    private String authorityNm;
 }

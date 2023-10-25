@@ -9,11 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserDto {
-    private String userId;
-    private String eid;
-    private String pwd;
-    private String accessToken;
-    private String providerNm;
-    private String authorityNm;
+public class VilagPlacDto {
+    private Long vilagPlacId;
+    private String vilagPlacNm;
+    private String vilagPlacRoleCd;
+    private String vilagPlacImg;
+    private Long vialgIntfId;
 }

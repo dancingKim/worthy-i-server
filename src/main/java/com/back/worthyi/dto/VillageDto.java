@@ -9,11 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserDto {
-    private String userId;
-    private String eid;
-    private String pwd;
-    private String accessToken;
-    private String providerNm;
-    private String authorityNm;
+public class VillageDto {
+    private Long vilagId;
+    private Long avatarId;
+    private Long vialgIntfId;
 }

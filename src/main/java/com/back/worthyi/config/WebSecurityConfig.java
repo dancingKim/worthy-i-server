@@ -56,8 +56,7 @@ public class WebSecurityConfig {
                                 "/",
                                 "/auth/**",
                                 "/oauth2/**",
-                                "/login/oauth2/**",
-                                "/favicon.ico")
+                                "/login/oauth2/**")
                         .permitAll()
                         .anyRequest()
                         .authenticated())
@@ -83,8 +82,8 @@ public class WebSecurityConfig {
     @CrossOrigin
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-//        configuration.setAllowedOriginPatterns(Arrays.asList("*"));
-        configuration.setAllowedOriginPatterns(Arrays.asList("http://localhost:3000", "http://3.39.6.61:3000"));
+        configuration.setAllowedOriginPatterns(Arrays.asList("*"));
+//        configuration.setAllowedOriginPatterns(Arrays.asList("http://localhost:3000", "http://3.39.6.61:3000"));
         configuration.setAllowedMethods(Arrays.asList("HEAD","GET","POST","PUT","DELETE"));
         configuration.setAllowedHeaders(Arrays.asList("Authorization","Cache-Control","Content-Type"));
         configuration.setAllowCredentials(true);
