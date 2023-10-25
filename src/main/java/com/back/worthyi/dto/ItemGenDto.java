@@ -1,5 +1,6 @@
 package com.back.worthyi.dto;
 
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,11 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserDto {
-    private String userId;
-    private String eid;
-    private String pwd;
-    private String accessToken;
-    private String providerNm;
-    private String authorityNm;
+public class ItemGenDto {
+    private Long itemGenId;
+    private String itemGenNm;
+    private Date itemGenDay;
+    private String itemGenPlace;
 }

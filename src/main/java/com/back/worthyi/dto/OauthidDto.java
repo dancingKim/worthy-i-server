@@ -9,11 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserDto {
+public class OauthidDto {
+    private Long oauthId;
     private String userId;
-    private String eid;
-    private String pwd;
     private String accessToken;
     private String providerNm;
-    private String authorityNm;
+    private String socialId;
 }
